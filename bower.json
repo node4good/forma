@@ -17,10 +17,10 @@
     "components",
   ],
   "dependencies": {
-    "jquery": ""
+    "jquery": "*"
   },
   "devDependencies": {
-    "bootstrap": "",
-    "select2": ""
+    "bootstrap": "*",
+    "select2": "*"
   }
 }

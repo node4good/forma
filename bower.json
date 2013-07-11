@@ -1,0 +1,26 @@
+{
+  "name": "forma",
+  "version": "0.0.1",
+  "repo": "Empeeric/forma",
+  "description": "Client-side form generator",
+  "keywords": [
+    "form",
+    "form builder",
+    "form generator"
+  ],
+  "scripts": [
+    "forma.js"
+  ],
+  "main": "forma.js",
+  "license": "MIT",
+  "ignore": [
+    "components",
+  ],
+  "dependencies": {
+    "jquery": ""
+  },
+  "devDependencies": {
+    "bootstrap": "",
+    "select2": ""
+  }
+}

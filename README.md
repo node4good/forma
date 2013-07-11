@@ -1,9 +1,9 @@
-Forma - Client-side form generator
+[Forma](http://empeeric.github.io/forma/) - Client-side form generator
 =======
 
 Quick and easy javascript form builder. May you never have to write boring, repetative markup again.
 
-### Example
+### [Example](http://empeeric.github.io/forma/)
 ```js
 /*
  Add new fields to Former,
@@ -76,4 +76,4 @@ $('form').prepend(form.render());
 form.fields.radio.el[1].on('click', function() {
     console.log('Tuning radio...')
 });
-``
+```

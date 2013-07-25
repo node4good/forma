@@ -1,7 +1,7 @@
 [Forma](http://empeeric.github.io/forma/) - Client-side form generator
 =======
 
-Quick and easy javascript form builder. May you never have to write boring, repetative markup again.
+Quick and easy javascript form builder. May you never have to write boring, repetitive markup again.
 
 ### [Example](http://empeeric.github.io/forma/)
 ```js
@@ -10,15 +10,9 @@ Quick and easy javascript form builder. May you never have to write boring, repe
  e.g. define a reusable select2 field
  */
 Forma.fields['select2'] = function(o) {
-    $.extend(true, o, { options: [] });
+    var el = Forma.fields.select.call(this, o);
 
-    var el = $('<select>' +
-        o.options.map(function(option) {
-            return '<option>' + option + '</option>'
-        }).join('') +
-        '</select>');
-
-    setTimeout(function() { // wait till form is rendered
+    setTimeout(function() {
         el.select2();
     }, 0);
 
@@ -30,17 +24,22 @@ Forma.fields['select2'] = function(o) {
  Just declare your schema, we'll do the rest
  */
 var form = new Forma({
-    name: {
+    // simplest: just declare name and type
+    username: 'text',
+    password: 'password',
+
+    // or you can have full control
+    where: {
         type: 'text',
         value: 'Shine',
-        required: true, // jQuery.validate or browser form validation can read this!
-        ready: function(el) { // You can actually access your element!
+        required: true,         // jQuery.validate or browser form validation can read this!
+        ready: function(el) {   // You can actually access your element!
             el.on('click', function() {
                 console.log($(this).val());
             });
-        }
+        },
+        label: 'WHERE?!'        // Or set
     },
-    password: 'password',
     select: {
         type: 'select2',
         options: ['what', 'where', 'when']

@@ -14,7 +14,7 @@
   "main": "forma.js",
   "license": "MIT",
   "ignore": [
-    "components",
+    "components"
   ],
   "dependencies": {
     "jquery": "*"

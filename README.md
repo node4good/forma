@@ -1,6 +1,8 @@
 [Forma](http://empeeric.github.io/forma/) - Client-side form generator
 =======
 
+> forma, formae; (f.); form, figure, shape; beautiful shape, beauty (-- a latin dictionary)
+
 Quick and easy javascript form builder. May you never have to write boring, repetitive markup again.
 
 ### [Example](http://empeeric.github.io/forma/)

@@ -1,28 +1,14 @@
 [Forma](http://empeeric.github.io/forma/) - Client-side form generator
 =======
 
-> forma, formae; (f.); form, figure, shape; beautiful shape, beauty (-- a latin dictionary)
+> forma, formae; (f.); form, figure, shape; beautiful shape, beauty (-- Latin-English Dictionary)
 
 Quick and easy javascript form builder. May you never have to write boring, repetitive markup again.
 
 ### [Example](http://empeeric.github.io/forma/)
+
 ```js
 /*
- Add new fields to Former,
- e.g. define a reusable select2 field
- */
-Forma.fields['select2'] = function(o) {
-    var el = Forma.fields.select.call(this, o);
-
-    setTimeout(function() {
-        el.select2();
-    }, 0);
-
-    return el;
-};
-
-/*
- Forma Example
  Just declare your schema, we'll do the rest
  */
 var form = new Forma({
@@ -53,6 +39,17 @@ var form = new Forma({
     }
 });
 
+// Extend Forma with more field types; e.g. define a reusable select2 field
+Forma.fields['select2'] = function(o) {
+    var el = Forma.fields.select.call(this, o);
+
+    setTimeout(function() {
+        el.select2();
+    }, 0);
+
+    return el;
+};
+
 // Forma is happy to play well with Rivets.js, and other data binders
 form.field = function(o) {
     o['data-value'] = 'model.' + o.name;
@@ -73,8 +70,21 @@ form.row = function(label, o) {
 // Render the form and append it to the document!
 $('form').prepend(form.render());
 
-// Elements can be accessed later if you want
+// Elements can be accessed later
 form.fields.radio.el[1].on('click', function() {
     console.log('Tuning radio...')
 });
 ```
+
+#### Field types
+- text (`<input type="text" />`)
+- password (`<input type="password" />`)
+- file (`<input type="file" />`)
+- select (`<select />`)
+- radio (`<input type="radio" />`)
+
+#### Plugins' fields
+See `plugins.js`. Dependent on the actual plugins.
+- date ([Bootstrap Datepicker](http://www.eyecon.ro/bootstrap-datepicker))
+- slider ([Bootstrap Slider](http://www.eyecon.ro/bootstrap-slider/))
+- select2 ([Select2](http://ivaynberg.github.io/select2/))

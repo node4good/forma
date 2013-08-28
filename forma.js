@@ -27,6 +27,9 @@
     fields.password = function(o) {
         return fields.input($.extend(o, { type: 'password' }));
     };
+    fields.file = function(o) {
+        return fields.input($.extend(o, { type: 'file' }));
+    };
     fields.select = function(o) {
         $.extend(true, o, { options: [] });
         return $('<select>' +
